@@ -1,5 +1,7 @@
 # vue_form_project
 
+This project want to make a survey form likes google form.
+
 ## Project setup
 ```
 npm install
