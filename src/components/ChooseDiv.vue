@@ -6,7 +6,7 @@
           type="text"
           class="form-control col-11 option_item"
           :placeholder="option.title"
-          v-model="option.content"
+          v-model="optionAnswer"
         />
         <button type="button" class="btn btn-outline-primary col-1" v-on:click="removeOption()">X</button>
       </div>
@@ -20,12 +20,16 @@ export default {
   name: "choose-div",
   data() {
     return {
-      placeholderName : "選項"+this.index,
+      optionAnswer: "",
+      placeholderName: "選項" + this.index
     };
   },
   methods: {
     removeOption: function() {
       this.$emit("removeOptionSelf", this.index);
+    },
+    outputOptionAnswer: function() {
+      this.$emit("pushOptionAnswerSelf",this.optionAnswer);
     }
   }
 };

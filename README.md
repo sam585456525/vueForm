@@ -1,4 +1,4 @@
-# vue_form_project
+# vue survey form
 
 This project want to make a survey form likes google form.
 

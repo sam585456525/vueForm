@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-container>
+    <b-container class="mt-4">
       <!-- Content here -->
       <QuestionBase
         v-for="item in questionList"
@@ -10,6 +10,8 @@
         v-on:removeQuestionSelf="removeQuestion"
       ></QuestionBase>
       <b-button @click="newQuestion">新增問題</b-button>
+      <p></p>
+      <b-button @click="outputAllResult">outputAllResult</b-button>
     </b-container>
   </div>
 </template>
@@ -47,6 +49,14 @@ export default {
           list.splice(newIndex, 1);
         }
       });
+    },
+    outputAllResult: function() {
+      console.log("out put all result");
+      let outputResultArr = [];
+      for (var i = 0; i < this.$children.length; i++) {
+        outputResultArr.push(this.$children[i].outputAnswer());
+      }
+      console.log(outputResultArr);
     }
   }
 };

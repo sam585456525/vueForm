@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <h5 class="mr-1 mt-2">輸入類型</h5>
-    <select class="form-control col-2 input_type">
+    <select v-model="answerDivType" class="form-control col-2 input_type">
       <option selected>文字</option>
       <option>時間</option>
       <option>email</option>
@@ -13,7 +13,17 @@
 
 <script>
 export default {
-  name: "answer-div"
+  name: "answer-div",
+  data() {
+    return {
+      answerDivType: "文字",
+    };
+  },
+  methods:{
+     outputAnswerType: function() {
+      this.$emit("setAnsDivTypeself",this.answerDivType);
+    }
+  }
 };
 </script>
 
